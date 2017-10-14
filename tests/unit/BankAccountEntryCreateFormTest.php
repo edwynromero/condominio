@@ -1,0 +1,41 @@
+<?php
+
+class BankAccountEntryTest extends \Codeception\Test\Unit
+{
+    /**
+     * @var \UnitTester
+     */
+    protected $tester;
+    
+    protected function _before()
+    {
+    }
+
+    protected function _after()
+    {
+    }
+
+
+
+    // tests to validate the method validate()
+    public function testCreateBankAccountEntryForm()
+    {
+        $result                             = FALSE;
+        $model                              = new BankAccountEntry();     
+        $model->begin_date                  = '20161018';
+        $model->end_date                    = '20161018';
+        $model->number                      = 'prueba';
+        $model->summary                     = "prueba";
+        $model->value                       = "1003.2";
+        $model->type                        = "O";
+        $model->bank_account_summary_id     =   '52';
+    
+        //validate data in model BankAccountEntry     
+        if($model->validate()){
+            $result     = TRUE;
+        }
+
+            $this->assertTrue($result, 'Ha fallado la prueba debido a que algun campo no cumple con lo establecido en el metodo rules de la clase BankAccountEntry');
+
+    }    
+}

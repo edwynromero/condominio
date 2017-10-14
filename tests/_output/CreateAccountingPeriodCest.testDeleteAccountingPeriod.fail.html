@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/css/bootstrap-yii.css" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/css/jquery-ui-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/abound.css" />
+<script type="text/javascript" src="/assets/d9a5da1c/jquery.js"></script>
+<script type="text/javascript" src="/assets/214e3364/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/214e3364/js/bootstrap-noconflict.js"></script>
+<script type="text/javascript" src="/assets/214e3364/bootbox/bootbox.min.js"></script>
+<script type="text/javascript" src="/assets/214e3364/notify/notify.min.js"></script>
+<script type="text/javascript" src="/assets/d9a5da1c/jquery.ba-bbq.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.sparkline.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="/themes/backend/js/charts.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.knob.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="/themes/backend/js/styleswitcher.js"></script>
+<title>Mirador Panamericano - Backend </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free yii themes, free web application theme">
+    <meta name="author" content="Webapplicationthemes.com">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/themes/backend/js/html5.js"></script>
+    <![endif]-->
+	    <!-- Fav and Touch and touch icons -->
+    <link rel="shortcut icon" href="/themes/backend/img/icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/themes/backend/img/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/backend/img/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/themes/backend/img/icons/apple-touch-icon-57-precomposed.png">
+	      <!-- styles for style switcher -->
+      	<link rel="stylesheet" type="text/css" href="/themes/backend/css/style-green.css" />
+	  	<link rel="stylesheet" type="text/css" href="/themes/backend/css/style.css" />
+  </head>
+
+<body class="page-backend-accountingPeriod-admin" >
+
+<section id="navigation-main">   
+<!-- Require the navigation -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+    <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+     
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#"><img src="/themes/backend/img/logo_mirador_128.png" width="48" height="48">Mirador Panamericano - <small>Sistema de Gestión</small></a>
+          
+          <div class="nav-collapse">
+			<ul class="pull-right nav" id="yw3">
+<li class="item-test"><a href="/index.php/backend">Panel de Control</a></li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cuotas y Pagos <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Pagos</b></a></li>
+<li class="item-test"><a href="/index.php/backend/pay/admin">Registro de Pagos</a></li>
+<li class="item-test"><a href="/index.php/backend/payNotCashInfo/review">Pagos Directo al Banco</a></li>
+<li class="item-test"><a href="/index.php/backend/fixPay/processLocation">Asignar Cuotas a Pagos</a></li>
+<li class="nav-header item-test"><a href="#"><b>Cuotas</b></a></li>
+<li class="item-test"><a href="/index.php/backend/fee/admin">Cuotas de Parcelas</a></li>
+<li class="item-test"><a href="/index.php/backend/feeType/admin">Tipo de Cuota</a></li>
+<li class="nav-header item-test"><a href="#"><b>Reportes</b></a></li>
+<li class="item-test"><a href="/index.php/backend/report/defaulters">Deudores</a></li>
+</ul>
+</li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Propietarios <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Parcelas</b></a></li>
+<li class="item-test"><a href="/index.php/backend/location/admin">Parcelas</a></li>
+<li class="item-test"><a href="/index.php/backend/locationGeometry/admin">Planos de Parcelas</a></li>
+<li class="item-test"><a href="/index.php/backend/owner/admin">Propietarios</a></li>
+<li class="nav-header item-test"><a href="#"><b>Propietarios</b></a></li>
+<li class="item-test"><a href="/index.php/backend/person/admin">Personas</a></li>
+<li class="item-test"><a href="/index.php/backend/groupPerson/admin">Familias/Asociaciones</a></li>
+<li class="item-test"><a href="/index.php/backend/residentAssociation/admin">Junta Directiva Asoc. Vecinos</a></li>
+<li class="item-test"><a href="/index.php/backend/registerRequest/admin">Solicitudes de Registro de Usuario</a></li>
+</ul>
+</li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Finanzas <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Bancos</b></a></li>
+<li class="item-test"><a href="/index.php/backend/bankAccount/index">Cuentas Bancarias</a></li>
+<li class="nav-header item-test"><a href="#"><b>Cuentas Contables</b></a></li>
+<li class="item-test"><a href="/index.php/backend/accountingAccountType/index">Tipos de Cuentas Contables</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingAccount/index">Cuentas Contables</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingAlias/index">Alias Contables</a></li>
+<li class="nav-header item-test"><a href="#"><b>Periodos Contables</b></a></li>
+<li class="item-test"><a href="/index.php/backend/accountPeriodStatus/index">Estado del Período de Cuenta</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingPeriod/index">Periodos Contables</a></li>
+<li class="nav-header item-test"><a href="#"><b>Años Fiscales</b></a></li>
+<li class="item-test"><a href="/index.php/backend/fiscalYear/index">Años Fiscales</a></li>
+<li class="nav-header item-test"><a href="#"><b>Movimientos Contables</b></a></li>
+<li class="item-test"><a href="/index.php/backend/accountingMoveStatus/index">Estado movimientos Contables</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingMove/index">Movimientos Contables</a></li>
+</ul>
+</li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sistema <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Biblioteca</b></a></li>
+<li class="item-test"><a href="/index.php/backend/country/admin">Paises</a></li>
+<li class="item-test"><a href="/index.php/backend/state/admin">Estados</a></li>
+<li class="item-test"><a href="/index.php/backend/bank/admin">Bancos</a></li>
+<li class="nav-header item-test"><a href="#"><b>Junta Directiva Asoc. Vecinos</b></a></li>
+<li class="item-test"><a href="/index.php/backend/associationPosition/admin">Cargos Asociación</a></li>
+<li class="item-test"><a href="/index.php/backend/bankAccount/admin">Cuentas Bancarias</a></li>
+<li class="nav-header item-test"><a href="#"><b>Usuarios y Roles</b></a></li>
+<li class="item-test"><a href="/index.php/backend/user">Usuarios</a></li>
+<li class="item-test"><a href="/index.php/auth/assignment">Asignar Permisos</a></li>
+<li class="item-test"><a href="/index.php/auth/role">Roles</a></li>
+<li class="item-test"><a href="/index.php/auth/task">Tareas</a></li>
+<li class="item-test"><a href="/index.php/auth/operation">Operaciones</a></li>
+<li class="nav-header item-test"><a href="#"><b>Auditoría del Sistema</b></a></li>
+<li class="item-test"><a href="/index.php/backend/log">Registros de Operaciones</a></li>
+</ul>
+</li>
+<li class="item-test"><a target="_blank" class="myaccount-link" href="/index.php/site">Mi Cuenta</a></li>
+<li class="item-test"><a href="/index.php/backend/default/logout">Salir (admin)</a></li>
+</ul>    	</div>
+    </div>
+	</div>
+</div>
+
+<div class="subnav navbar navbar-fixed-top">
+    <div class="navbar-inner">
+    	<div class="container">        
+        	<div class="style-switcher pull-left">
+          	</div>
+         <!--  <form class="navbar-search pull-right" action="">
+           	 
+           <input type="text" class="search-query span2" placeholder="Search">
+           
+           </form> -->
+    	</div><!-- container -->
+    </div><!-- navbar-inner -->
+</div><!-- subnav --></section><!-- /#navigation-main -->
+    
+<section class="main-body">
+    <div class="container-fluid">
+            <!-- Include content pages -->
+            
+  <div class="row-fluid">
+	<div class="span2">
+		<div class="sidebar-nav">
+        
+		  <ul id="yw2">
+<li><span><i class="icon icon-home"></i>  OPERATIONS <span class="label label-info pull-right">PERSON</span></span>
+<ul>
+<li><a href="/index.php/backend/accountingPeriod/create">Crear Periodo Contable</a></li>
+</ul>
+</li>
+</ul>		</div>
+        <br>
+    </div><!--/span-->
+    <div class="span10">
+    
+    		<div class="breadcrumb">
+<a href="#">Dashboard</a> &raquo; <a href="/index.php/backend/accountingPeriod/index">Accounting Periods</a> &raquo; <span>Manage</span></div><!-- breadcrumbs -->
+        
+    <!-- Include content pages -->
+    
+<h1>
+    Administrar Periodos Contables</h1>
+
+<p>
+You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+</p>
+
+<a class="btn search-button" href="#">Advanced Search</a><div class="search-form" style="display:none">
+
+<div class="wide form">
+
+<form id="yw0" action="/index.php/backend/accountingPeriod/admin" method="get">
+	<div class="row">
+		<label for="AccountingPeriod_id">ID</label>		<input name="AccountingPeriod[id]" id="AccountingPeriod_id" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_label">Etiqueta</label>		<input size="60" maxlength="64" name="AccountingPeriod[label]" id="AccountingPeriod_label" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_from">Desde</label>		<input name="AccountingPeriod[from]" id="AccountingPeriod_from" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_to">Hasta</label>		<input name="AccountingPeriod[to]" id="AccountingPeriod_to" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_fiscal_year_id">Año Fiscal</label>		<input name="AccountingPeriod[fiscal_year_id]" id="AccountingPeriod_fiscal_year_id" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_created_at">Created At</label>		<input name="AccountingPeriod[created_at]" id="AccountingPeriod_created_at" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_updated_at">Updated At</label>		<input name="AccountingPeriod[updated_at]" id="AccountingPeriod_updated_at" type="text" />	</div>
+
+	<div class="row">
+		<label for="AccountingPeriod_status">Estatus</label>		<input size="4" maxlength="4" name="AccountingPeriod[status]" id="AccountingPeriod_status" type="text" />	</div>
+
+	<div class="row buttons form-actions">
+		<input class="btn btn-primary" type="submit" name="yt0" value="Search" />	</div>
+
+</form>
+</div><!-- search-form --></div><!-- search-form -->
+
+<div id="accounting-period-grid" class="grid-view">
+<div class="summary">Viendo 1-1 de 1 resultado.</div>
+<table class="items table">
+<thead>
+<tr>
+<th id="accounting-period-grid_c0"><a class="sort-link" href="/index.php/backend/accountingPeriod/admin/AccountingPeriod_sort/id">ID </a></th><th id="accounting-period-grid_c1"><a class="sort-link" href="/index.php/backend/accountingPeriod/admin/AccountingPeriod_sort/label">Etiqueta </a></th><th id="accounting-period-grid_c2"><a class="sort-link" href="/index.php/backend/accountingPeriod/admin/AccountingPeriod_sort/from">Desde </a></th><th id="accounting-period-grid_c3"><a class="sort-link" href="/index.php/backend/accountingPeriod/admin/AccountingPeriod_sort/to">Hasta </a></th><th id="accounting-period-grid_c4"><a class="sort-link" href="/index.php/backend/accountingPeriod/admin/AccountingPeriod_sort/fiscal_year_id">Año Fiscal </a></th><th id="accounting-period-grid_c5"><a class="sort-link" href="/index.php/backend/accountingPeriod/admin/AccountingPeriod_sort/created_at">Created At </a></th><th class="button-column" id="accounting-period-grid_c6">&nbsp;</th></tr>
+<tr class="filters">
+<td><div class="filter-container"><input name="AccountingPeriod[id]" id="AccountingPeriod_id" type="text" /></div></td><td><div class="filter-container"><input name="AccountingPeriod[label]" id="AccountingPeriod_label" type="text" maxlength="64" /></div></td><td><div class="filter-container"><input name="AccountingPeriod[from]" id="AccountingPeriod_from" type="text" /></div></td><td><div class="filter-container"><input name="AccountingPeriod[to]" id="AccountingPeriod_to" type="text" /></div></td><td><div class="filter-container"><input name="AccountingPeriod[fiscal_year_id]" id="AccountingPeriod_fiscal_year_id" type="text" /></div></td><td><div class="filter-container"><input name="AccountingPeriod[created_at]" id="AccountingPeriod_created_at" type="text" /></div></td><td>&nbsp;</td></tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>25</td><td>TEST</td><td>2017-07-12</td><td>2017-07-20</td><td>1</td><td>2017-07-13 14:36:31</td><td class="button-column"><a class="view" title="Ver" data-toggle="tooltip" href="/index.php/backend/accountingPeriod/view/id/25"><i class="icon-eye-open"></i></a> <a class="update" title="Actualizar" data-toggle="tooltip" href="/index.php/backend/accountingPeriod/update/id/25"><i class="icon-pencil"></i></a> <a class="delete" title="Borrar" data-toggle="tooltip" href="/index.php/backend/accountingPeriod/delete/id/25"><i class="icon-trash"></i></a></td></tr>
+</tbody>
+</table>
+<div class="keys" style="display:none" title="/index.php/backend/accountingPeriod/admin"><span>25</span></div>
+</div>
+	</div><!--/span-->
+  </div><!--/row-->
+
+
+    </div>
+</section>
+
+<!-- Require the footer -->
+	<footer>
+        <div class="subnav navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    Desarrollado por <a href="http://www.koiosoft.com" target="_new">Koiosoft, Tecnología de Información C.A.</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>      
+	</footer>
+  <script type="text/javascript" src="/assets/ca3d5e6d/gridview/jquery.yiigridview.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+jQuery('[data-toggle=popover]').popover();
+jQuery('body').tooltip({"selector":"[data-toggle=tooltip]"});
+
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#accounting-period-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+
+jQuery(document).on('click','#accounting-period-grid a.delete',function() {
+	if(!confirm('¿Está seguro que desea borrar este elemento?')) return false;
+	var th = this,
+		afterDelete = function(){};
+	jQuery('#accounting-period-grid').yiiGridView('update', {
+		type: 'POST',
+		url: jQuery(this).attr('href'),
+		success: function(data) {
+			jQuery('#accounting-period-grid').yiiGridView('update');
+			afterDelete(th, true, data);
+		},
+		error: function(XHR) {
+			return afterDelete(th, false, XHR);
+		}
+	});
+	return false;
+});
+jQuery('#accounting-period-grid').yiiGridView({'ajaxUpdate':['accounting-period-grid'],'ajaxVar':'ajax','pagerClass':'pagination','loadingClass':'grid-view-loading','filterClass':'filters','tableClass':'items table','selectableRows':1,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'AccountingPeriod_page','afterAjaxUpdate':function() {
+			jQuery('.popover').remove();
+			jQuery('[data-toggle=popover]').popover();
+			jQuery('.tooltip').remove();
+			jQuery('[data-toggle=tooltip]').tooltip();
+		}});
+});
+/*]]>*/
+</script>
+</body>
+</html>

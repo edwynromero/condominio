@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html id="layout_login"  lang="en">
+  <head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="/assets/8265e453/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/8265e453/css/bootstrap-yii.css" />
+<link rel="stylesheet" type="text/css" href="/assets/8265e453/css/jquery-ui-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="/themes/frontend/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="/themes/frontend/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/frontend/css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/frontend/css/abound.css" />
+<script type="text/javascript" src="/assets/10530601/jquery.js"></script>
+<script type="text/javascript" src="/assets/8265e453/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/8265e453/js/bootstrap-noconflict.js"></script>
+<script type="text/javascript" src="/assets/8265e453/bootbox/bootbox.min.js"></script>
+<script type="text/javascript" src="/assets/8265e453/notify/notify.min.js"></script>
+<script type="text/javascript" src="/assets/10530601/jquery.yiiactiveform.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/plugins/jquery.sparkline.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/plugins/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/plugins/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/charts.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/plugins/jquery.knob.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/plugins/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="/themes/frontend/js/styleswitcher.js"></script>
+<title>Mirador Panamericano - Backend </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free yii themes, free web application theme">
+    <meta name="author" content="Webapplicationthemes.com">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/themes/frontend/js/html5.js"></script>
+    <![endif]-->
+	    <!-- Fav and Touch and touch icons -->
+    <link rel="shortcut icon" href="/themes/frontend/img/icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/themes/frontend/img/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/frontend/img/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/themes/frontend/img/icons/apple-touch-icon-57-precomposed.png">
+	      <!-- styles for style switcher -->
+      	<link rel="stylesheet" type="text/css" href="/themes/frontend/css/style-green.css" />
+	  	<link rel="stylesheet" type="text/css" href="/themes/frontend/css/style.css" />
+  </head>
+
+<body id="layout_login">
+
+<section id="navigation-main">   
+</section><!-- /#navigation-main -->
+    
+<section class="main-body">
+    <div class="container-fluid">
+		<div class="page-header">
+			<div class="row-fluid">
+				<div class="span2">
+				<figure>
+				  <img src="/themes/frontend/img/mirador_logo_bg_white.png" class="img-circle" alt="Baby Orang Utan hanging from a rope">
+				</figure> 
+				</div>
+				<div class="span10 center">
+					<label>Mirador Panamericano</label>
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
+
+<!-- Require the footer -->
+	<footer>
+        <div class="subnav navbar navbar-fixed-bottom">
+             <div id="content">
+	<div class="row-fluid">
+	
+    <div id="login_form_section" class="span4 offset7 img-rounded">
+<div style="borders: 0px;" id="yw0">
+<div class="portlet-decoration">
+<div class="portlet-title">Acceso Privado</div>
+</div>
+<div class="portlet-content">
+
+
+
+    <p class="note">Por favor, complete el formulario con sus credenciales:</p>
+    
+    <div class="form">
+    <form id="login-form" action="/index.php/site/login" method="post">    
+        <p class="note-required">Campos con<span class="required">*</span> son obligatorios.</p>
+    
+        <div class="row">
+            <label style="color:#c09853;" for="LoginForm_username" class="required">Usuario <span class="required">*</span></label>            <input style="text-align:center;" name="LoginForm[username]" id="LoginForm_username" type="text" value="" />            <div class="errorMessage" id="LoginForm_username_em_" style="display:none"></div>        </div>
+    
+        <div class="row">
+            <label style="color:#c09853;" for="LoginForm_password" class="required">Contraseña <span class="required">*</span></label>            <input style="text-align:center;" name="LoginForm[password]" id="LoginForm_password" type="password" />            <div class="errorMessage" id="LoginForm_password_em_" style="display:none"></div>        </div>
+    
+        <div class="row buttons">
+        	<div class="span3">
+        		<a class="text-warning forget-link" href="http://mirador_remoto.local/index.php/site/forget">Olvidé mi Clave</a>        	</div>
+        	<div class="span6" >
+        	   <input class="btn btn btn-inverse" type="submit" name="yt0" value="Login" />        	</div>
+        	<div class="span3"></div>
+         
+        </div>
+    
+    </form>    </div><!-- form -->
+
+</div>
+</div>    </div>
+</div></div><!-- content -->
+        </div>     
+	</footer>
+  <script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+jQuery('[data-toggle=popover]').popover();
+jQuery('body').tooltip({"selector":"[data-toggle=tooltip]"});
+jQuery('#login-form').yiiactiveform({'validateOnSubmit':true,'attributes':[{'id':'LoginForm_username','inputID':'LoginForm_username','errorID':'LoginForm_username_em_','model':'LoginForm','name':'username','enableAjaxValidation':false,'clientValidation':function(value, messages, attribute) {
+
+if(jQuery.trim(value)=='') {
+	messages.push("El Usuario no puede estar vac\u00edo");
+}
+
+}},{'id':'LoginForm_password','inputID':'LoginForm_password','errorID':'LoginForm_password_em_','model':'LoginForm','name':'password','enableAjaxValidation':false,'clientValidation':function(value, messages, attribute) {
+
+if(jQuery.trim(value)=='') {
+	messages.push("El Contrase\u00f1a no puede estar vac\u00edo");
+}
+
+}}],'errorCss':'error'});
+});
+/*]]>*/
+</script>
+</body>
+</html>

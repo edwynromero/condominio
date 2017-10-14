@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/css/bootstrap-yii.css" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/css/jquery-ui-bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/select2/select2.css" />
+<link rel="stylesheet" type="text/css" href="/assets/214e3364/bootstrap-datepicker/css/datepicker.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/themes/backend/css/abound.css" />
+<script type="text/javascript" src="/assets/d9a5da1c/jquery.js"></script>
+<script type="text/javascript" src="/assets/214e3364/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/214e3364/js/bootstrap-noconflict.js"></script>
+<script type="text/javascript" src="/assets/214e3364/bootbox/bootbox.min.js"></script>
+<script type="text/javascript" src="/assets/214e3364/notify/notify.min.js"></script>
+<script type="text/javascript" src="/assets/214e3364/select2/select2.min.js"></script>
+<script type="text/javascript" src="/assets/214e3364/select2/select2_locale_es.js"></script>
+<script type="text/javascript" src="/assets/214e3364/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="/assets/d9a5da1c/jquery.yii.js"></script>
+<script type="text/javascript" src="/assets/214e3364/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.sparkline.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="/themes/backend/js/charts.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.knob.js"></script>
+<script type="text/javascript" src="/themes/backend/js/plugins/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="/themes/backend/js/styleswitcher.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+		$(document).ready(function() {
+		var options = {"negativeFormat":"-%s%n","roundToDecimalPlace":2,"region":"es-VE","decimalSymbol":",","digitGroupSymbol":".","colorize":true};
+		    $('#value_cash_text').blur(function() {
+		        $(this).formatCurrency(options);
+		            }).keyup(function(e) {
+		                        	var onblurOptions = options;
+		                        	onblurOptions['roundToDecimalPlace'] = -1;
+		                        	onblurOptions['eventOnDecimalsEntered'] = true;
+		                        	$(this).formatCurrency(onblurOptions);
+		                     $(this).parent().find('.currency_input').val($(this).asNumber());
+
+		             });
+
+			// initializing values
+			$('#value_cash_text').formatCurrency(options);
+		});
+		
+/*]]>*/
+</script>
+<title>Mirador Panamericano - Backend </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free yii themes, free web application theme">
+    <meta name="author" content="Webapplicationthemes.com">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/themes/backend/js/html5.js"></script>
+    <![endif]-->
+	    <!-- Fav and Touch and touch icons -->
+    <link rel="shortcut icon" href="/themes/backend/img/icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/themes/backend/img/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/backend/img/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/themes/backend/img/icons/apple-touch-icon-57-precomposed.png">
+	      <!-- styles for style switcher -->
+      	<link rel="stylesheet" type="text/css" href="/themes/backend/css/style-green.css" />
+	  	<link rel="stylesheet" type="text/css" href="/themes/backend/css/style.css" />
+  </head>
+
+<body class="page-backend-pay-payStep1" >
+
+<section id="navigation-main">   
+<!-- Require the navigation -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+    <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+     
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#"><img src="/themes/backend/img/logo_mirador_128.png" width="48" height="48">Mirador Panamericano - <small>Sistema de Gestión</small></a>
+          
+          <div class="nav-collapse">
+			<ul class="pull-right nav" id="yw6">
+<li class="item-test"><a href="/index.php/backend">Panel de Control</a></li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cuotas y Pagos <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Pagos</b></a></li>
+<li class="item-test"><a href="/index.php/backend/pay/admin">Registro de Pagos</a></li>
+<li class="item-test"><a href="/index.php/backend/payNotCashInfo/review">Pagos Directo al Banco</a></li>
+<li class="item-test"><a href="/index.php/backend/fixPay/processLocation">Asignar Cuotas a Pagos</a></li>
+<li class="nav-header item-test"><a href="#"><b>Cuotas</b></a></li>
+<li class="item-test"><a href="/index.php/backend/fee/admin">Cuotas de Parcelas</a></li>
+<li class="item-test"><a href="/index.php/backend/feeType/admin">Tipo de Cuota</a></li>
+<li class="nav-header item-test"><a href="#"><b>Reportes</b></a></li>
+<li class="item-test"><a href="/index.php/backend/report/defaulters">Deudores</a></li>
+</ul>
+</li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Propietarios <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Parcelas</b></a></li>
+<li class="item-test"><a href="/index.php/backend/location/admin">Parcelas</a></li>
+<li class="item-test"><a href="/index.php/backend/locationGeometry/admin">Planos de Parcelas</a></li>
+<li class="item-test"><a href="/index.php/backend/owner/admin">Propietarios</a></li>
+<li class="nav-header item-test"><a href="#"><b>Propietarios</b></a></li>
+<li class="item-test"><a href="/index.php/backend/person/admin">Personas</a></li>
+<li class="item-test"><a href="/index.php/backend/groupPerson/admin">Familias/Asociaciones</a></li>
+<li class="item-test"><a href="/index.php/backend/residentAssociation/admin">Junta Directiva Asoc. Vecinos</a></li>
+<li class="item-test"><a href="/index.php/backend/registerRequest/admin">Solicitudes de Registro de Usuario</a></li>
+</ul>
+</li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Finanzas <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Bancos</b></a></li>
+<li class="item-test"><a href="/index.php/backend/bankAccount/index">Cuentas Bancarias</a></li>
+<li class="nav-header item-test"><a href="#"><b>Cuentas Contables</b></a></li>
+<li class="item-test"><a href="/index.php/backend/accountingAccountType/index">Tipos de Cuentas Contables</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingAccount/index">Cuentas Contables</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingAlias/index">Alias Contables</a></li>
+<li class="nav-header item-test"><a href="#"><b>Periodos Contables</b></a></li>
+<li class="item-test"><a href="/index.php/backend/accountPeriodStatus/index">Estado del Período de Cuenta</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingPeriod/index">Periodos Contables</a></li>
+<li class="nav-header item-test"><a href="#"><b>Años Fiscales</b></a></li>
+<li class="item-test"><a href="/index.php/backend/fiscalYear/index">Años Fiscales</a></li>
+<li class="nav-header item-test"><a href="#"><b>Movimientos Contables</b></a></li>
+<li class="item-test"><a href="/index.php/backend/accountingMoveStatus/index">Estado movimientos Contables</a></li>
+<li class="item-test"><a href="/index.php/backend/accountingMove/index">Movimientos Contables</a></li>
+</ul>
+</li>
+<li class="dropdown item-test" tabindex="-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sistema <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="nav-header item-test"><a href="#"><b>Biblioteca</b></a></li>
+<li class="item-test"><a href="/index.php/backend/country/admin">Paises</a></li>
+<li class="item-test"><a href="/index.php/backend/state/admin">Estados</a></li>
+<li class="item-test"><a href="/index.php/backend/bank/admin">Bancos</a></li>
+<li class="nav-header item-test"><a href="#"><b>Junta Directiva Asoc. Vecinos</b></a></li>
+<li class="item-test"><a href="/index.php/backend/associationPosition/admin">Cargos Asociación</a></li>
+<li class="item-test"><a href="/index.php/backend/bankAccount/admin">Cuentas Bancarias</a></li>
+<li class="nav-header item-test"><a href="#"><b>Usuarios y Roles</b></a></li>
+<li class="item-test"><a href="/index.php/backend/user">Usuarios</a></li>
+<li class="item-test"><a href="/index.php/auth/assignment">Asignar Permisos</a></li>
+<li class="item-test"><a href="/index.php/auth/role">Roles</a></li>
+<li class="item-test"><a href="/index.php/auth/task">Tareas</a></li>
+<li class="item-test"><a href="/index.php/auth/operation">Operaciones</a></li>
+<li class="nav-header item-test"><a href="#"><b>Auditoría del Sistema</b></a></li>
+<li class="item-test"><a href="/index.php/backend/log">Registros de Operaciones</a></li>
+</ul>
+</li>
+<li class="item-test"><a target="_blank" class="myaccount-link" href="/index.php/site">Mi Cuenta</a></li>
+<li class="item-test"><a href="/index.php/backend/default/logout">Salir (admin)</a></li>
+</ul>    	</div>
+    </div>
+	</div>
+</div>
+
+<div class="subnav navbar navbar-fixed-top">
+    <div class="navbar-inner">
+    	<div class="container">        
+        	<div class="style-switcher pull-left">
+          	</div>
+         <!--  <form class="navbar-search pull-right" action="">
+           	 
+           <input type="text" class="search-query span2" placeholder="Search">
+           
+           </form> -->
+    	</div><!-- container -->
+    </div><!-- navbar-inner -->
+</div><!-- subnav --></section><!-- /#navigation-main -->
+    
+<section class="main-body">
+    <div class="container-fluid">
+            <!-- Include content pages -->
+            
+  <div class="row-fluid">
+	<div class="span2">
+		<div class="sidebar-nav">
+        
+		  <ul id="yw5">
+<li><span><i class="icon icon-home"></i>  OPERATIONS <span class="label label-info pull-right">PERSON</span></span>
+<ul>
+<li><a href="/index.php/backend/pay/index">Listar Pago</a></li>
+<li><a href="/index.php/backend/pay/admin">Administrar Pago</a></li>
+</ul>
+</li>
+</ul>		</div>
+        <br>
+    </div><!--/span-->
+    <div class="span10">
+    
+    		<div class="breadcrumb">
+<a href="#">Dashboard</a> &raquo; <a href="/index.php/backend/pay/index">Pays</a> &raquo; <span>Create</span></div><!-- breadcrumbs -->
+        
+    <!-- Include content pages -->
+    
+	<h1>Crear Pago</h1>
+
+<form class="form-vertical" id="pay-form" action="/index.php/backend/pay/payStep1" method="post">
+<p class="help-block">Los campos con <span class="required">*</span> son requeridos.</p>
+	<input name="Pay[id]" id="Pay_id" type="hidden" />	<div class="row-fluid">
+		<div class="span3">
+			<label for="Pay_person_id" class="required">Propietario <span class="required">*</span></label><select name="Pay[person_id]" id="Pay_person_id">
+<option value="541">Abel, Carrasquero</option>
+<option value="560">Alberto, Dominguez</option>
+<option value="642">Alberto, Quintana</option>
+<option value="628">Alejandro, Pablo Bejar</option>
+<option value="649">Alfredo Jose, Rivas</option>
+<option value="601">Alvarado, Mestre</option>
+<option value="519">Alvaro, Alvarez</option>
+<option value="530">America, Patiño De Bestilleiro</option>
+<option value="615">Ana, Morillo Yanez</option>
+<option value="511">Andres, Abreu Arenas</option>
+<option value="656">Andry, Garcia</option>
+<option value="654">Angel, Sanguino</option>
+<option value="674">Angel, Viloria</option>
+<option value="528">Angelo, Basile Colosi</option>
+<option value="613">Anthony, Gomez</option>
+<option value="581">Antonio, Leonardis</option>
+<option value="584">Antonio, Libertti Vicenzo</option>
+<option value="648">Antonio, Randisi Paternostro</option>
+<option value="672">Antonio, Vieira</option>
+<option value="512">Anttilio, Afaldo</option>
+<option value="531">Argenis, Betancourt</option>
+<option value="590">Argenis, Machuca</option>
+<option value="532">Ariani, Piñango</option>
+<option value="632">Belquis, Garcia</option>
+<option value="658">Betty, Suarez</option>
+<option value="515">Blanca, Yanez</option>
+<option value="627">Carlos, Dugarte</option>
+<option value="633">Carlos, Perez</option>
+<option value="650">Carlos, Rivillo</option>
+<option value="687">Carlos, Rodríguez</option>
+<option value="639">Carlos Enrique, Platon Torres</option>
+<option value="678">Carlos Miguel, Yanes</option>
+<option value="667">Carmen, Millan</option>
+<option value="677">Cecilia, Ayala</option>
+<option value="539">Celso, Carmini</option>
+<option value="587">Concetta, Lomolino De Jastello</option>
+<option value="562">Cristina, Egui D Machado</option>
+<option value="583">Danetza, Manzanilla</option>
+<option value="518">Danilo, Aldana</option>
+<option value="638">David, Pinzon</option>
+<option value="574">Domingo, Goncalvez</option>
+<option value="514">Dorgelis, Alcocer</option>
+<option value="543">Edgar, Castro</option>
+<option value="585">Eduardo A, Lobo Parra</option>
+<option value="680">Elaine, Mujica</option>
+<option value="673">Eliana D, Vasconcelos</option>
+<option value="544">Ennio, Cemeco</option>
+<option value="660">Enrique, Taboada</option>
+<option value="558">Felix, Decanio</option>
+<option value="600">Francisco, Meo Romandini</option>
+<option value="617">Francisco, Mota Delgado</option>
+<option value="634">Frank, Piñero</option>
+<option value="682">Frank, Zavala</option>
+<option value="546">Georges, Chacur Salin</option>
+<option value="570">German, Garcia Pabon</option>
+<option value="565">Gianni, Ercole</option>
+<option value="549">Giussepe, Clemente Ventura</option>
+<option value="566">Guglielmo, Feleppa</option>
+<option value="554">Gumeh, Dallami</option>
+<option value="534">Gustavo Jose Saet, Brea Gil</option>
+<option value="640">Haidee, Marquez</option>
+<option value="513">Hector, Aguilar</option>
+<option value="607">Hector, Morillo</option>
+<option value="616">Hector, Morillo Yanez</option>
+<option value="564">Henry, Ercole</option>
+<option value="517">Henry, Marquez</option>
+<option value="612">Hugo, Morillo</option>
+<option value="610">Hugo Alberto, Morillo Yanez</option>
+<option value="614">Hugo Morillo, Gomez</option>
+<option value="557">IYUMIRY, PIÑA</option>
+<option value="651">Ifigenia, Godoy De Rivillo</option>
+<option value="525">Ingrid, Arnal</option>
+<option value="578">Iraima Volcan, Gulino</option>
+<option value="625">Irene, Otazua De Viteri</option>
+<option value="662">Isidro, Torrelles</option>
+<option value="624">Jesus, Figueroa</option>
+<option value="659">Jesus, Novoa</option>
+<option value="629">Jorge Aluino, Da Rocha Faustino</option>
+<option value="522">Jorge Luis, Castro</option>
+<option value="535">Jose, Brito</option>
+<option value="536">Jose, Campilongo Capozzoli</option>
+<option value="604">Jose, Mora</option>
+<option value="529">Jose Enrique, Bestilleiro Silveiro</option>
+<option value="606">Jose Gregorio, Moreno Contreras</option>
+<option value="524">Jose Luis, Barraza</option>
+<option value="620">Jose Niño, Niño</option>
+<option value="622">Jose Ramon, Nuñez Fornes</option>
+<option value="641">Jose Viloria, Marquez</option>
+<option value="657">Joyce, Salazar</option>
+<option value="582">Juan, Levane</option>
+<option value="589">Juana Zoraida, Machado D</option>
+<option value="605">Julio, Bustamante </option>
+<option value="653">Julio, Sanguino</option>
+<option value="571">Karl, Giessel Bernal</option>
+<option value="621">Katiusca, De Niño</option>
+<option value="521">Ligia, Araque De Castro</option>
+<option value="537">Ligia (Dario), Barrios (Canton)</option>
+<option value="592">Ligia Machuca / Yajaira Ysabel, Machuca Hernandez</option>
+<option value="655">Luis, Boada</option>
+<option value="547">Luis, Chang</option>
+<option value="568">Luis, Fuentes</option>
+<option value="635">Luis Armando, Perez Rengifo</option>
+<option value="647">MIRELLA (Raul), OBREGON (Vallejo)</option>
+<option value="580">Maira, Gutierrez</option>
+<option value="671">Manuela, Mendes</option>
+<option value="670">Marco, De Oliveira</option>
+<option value="569">Mariela, Godoy</option>
+<option value="563">Mario, Ercole</option>
+<option value="561">Mario Antonio  (casa Charito), Dos Santos</option>
+<option value="623">Martha, Ollarves</option>
+<option value="690">Maryory, Sierra</option>
+<option value="630">Mayra, Gonzalez</option>
+<option value="526">Mercedes, Barrios</option>
+<option value="603">Miguel, Bolivar</option>
+<option value="619">Miguel, Niño</option>
+<option value="556">Miguel, Vergara</option>
+<option value="679">Mikhael Y, Yuella</option>
+<option value="646">Mirella, Obregon</option>
+<option value="591">Mirian, Ceballos</option>
+<option value="664">Moraima, Palma</option>
+<option value="516">Morelia, Torres</option>
+<option value="688">NESTOR GERSON, PIÑERUA ARAUJO</option>
+<option value="572">Nancy, Giessel Bernal</option>
+<option value="520">Nelson, De Vasconcelos</option>
+<option value="643">Omar, Quintero Torres</option>
+<option value="527">Orlando, Barrios</option>
+<option value="573">Orlando, Gomez</option>
+<option value="523">Oscar, Rodriguez</option>
+<option value="594">Oswaldo Rafael, Maiz Rusian</option>
+<option value="663">Otto, Tovar</option>
+<option value="576">Pablo, Guevara</option>
+<option value="538">Paolo, Carmini</option>
+<option value="575">Paulina, Ferreira</option>
+<option value="681">Paulino, Moran</option>
+<option value="595">Pedro, Manaure</option>
+<option value="588">Pedro Abelardo, Lopez Blanco (contacto: Sr Canton)</option>
+<option value="553">Rafael Jose, Coronado Patiño</option>
+<option value="685">Rafael Jose, Gonzalez Liberto</option>
+<option value="618">Ramon, Muguruza Jimenez</option>
+<option value="542">Raul, Casadiego</option>
+<option value="596">Raul, Marquez</option>
+<option value="631">Ronald, Perez</option>
+<option value="661">Rosalba, Gonzalez</option>
+<option value="555">Rosalba De, Dallami</option>
+<option value="665">Rosario, Troitiño</option>
+<option value="644">Ruth Elizabeth, Hernandez</option>
+<option value="550">Constructora Sotelo S.R.L.</option>
+<option value="552">Constructora Urdaneta, C.A.</option>
+<option value="686">VENETRACTOR</option>
+<option value="636">STEVEN /Gabriel Eduardo, FERNANDEZ/Perozo Piñango</option>
+<option value="577">Salvador, Gulino</option>
+<option value="545">Silvia, Cemeco</option>
+<option value="609">Stefani Carolina, Oliveros Navas</option>
+<option value="637">Susana, Pinzon</option>
+<option value="579">Teobaldo, Gutierrez</option>
+<option value="668">Teresa / Oscar, Vasconcelos / Machuca</option>
+<option value="599">Txomin, Mendiola Apiaxi</option>
+<option value="598">Victor, Martel</option>
+<option value="548">Vincenzo A, Ciociola Piemontese</option>
+<option value="666">Wander Jose, Gutierrez Abreu</option>
+<option value="676">Wilbert, Werner</option>
+<option value="533">Williams, Zuleta</option>
+<option value="593">Yajaira Ysabel, Machuca Hernandez</option>
+<option value="597">Yanira, Marquez</option>
+<option value="626">Yosua Viteri Otazua, Trina Moreno</option>
+</select>					</div>
+		<div class="span2">
+			<label for="Pay_pay_date" class="required">Fecha de Pago <span class="required">*</span></label><input style="width:100%;" type="text" autocomplete="off" name="Pay[pay_date]" id="Pay_pay_date" value="11/07/2017" />
+		</div>
+		<div class="span2">
+			<label for="Pay_value_cash	">Value Cash</label>			<input id="value_cash" class="currency_input" name="Pay[value_cash]" type="hidden" value="0" /><input style="width:100%;" id="value_cash_text" class="currency" type="text" value="0" />		
+					</div>
+	</div>
+	<div class="row-fluid">
+		<div span="span12">
+			<fieldset>
+				<legend>Cheques, Transferencias y Depósitos</legend>
+				<div class="row-fluid">
+					<div class="offset3 span3">
+						<a id="btnRefreshNotCashInfo" class="hide" href="#">Actualizar</a>						
+					</div>
+					<div class="offset3 span2">				
+						<a id="btnCreateNotCashInfo" class="btn btn-success" href="#">Agregar ...</a>						<div id="createNotCashInfo"></div>
+						<div id="updateNotCashInfo"></div>				
+					</div>
+				</div>
+								
+				<div id="section-tabnotcashinfo" class="row-fluid">				
+					<div class="span10">
+					<table class="table table-striped">
+  						<thead>
+  							<tr>
+  								<th><a class="sort-link">Verificado</a></th>
+  								<th ><a class="sort-link">Tipo</a></th>
+  								<th><a class="sort-link">Cuenta Bancaria</a></th>
+  								<th><a class="sort-link">Banco</a></th>
+  								<th><a class="sort-link">Número</a></th>
+  								<th><a class="sort-link">Monto</a></th>  								
+  								<th><a class="sort-link"></th>
+  							</tr>
+  						</thead>
+  						<tbody>
+  							  													
+  											
+  						</tbody>
+  						<tfoot>
+  							<tr>
+  								<th colspan="4"></th>
+  								<th><a class="sort-link">Sub-Total</a></th>
+  								<th style="text-align: right;">Bs. 0,00<input type="hidden" value="0" name="sub-total" id="sub-total" /></th>
+  								<th><a class="sort-link"></th>
+  							</tr>
+  							<tr>
+  								<th colspan="4"></th>
+  								<th><a class="sort-link">Pay's Deferred</a></th>
+  								<th style="text-align: right;">Bs. 0,00</th>
+  								<th><a class="sort-link"></th>
+  							</tr>   							 
+							<tr class="success">
+  								<th colspan="4"></th>
+  								<th><a class="sort-link">Total Payed</a></th>
+  								<th class="btn-primary" style="text-align: right;"><span id="pay_total" >Bs. 0,00</span></th>
+  								<th ><a class="sort-link"></th>
+  							</tr>  	
+  						</tfoot>
+					</table>
+			</div>
+		</div>			</fieldset>
+		</div>
+	</div>
+<div class="form-actions">
+	<div class="row-fluid">
+		<div class="span4">
+			<button class="btn" id="yw2" type="submit" name="yt0">Cerrar</button>			
+			<button class="btn btn-primary" id="yw3" type="submit" name="yt1">Guardar</button>				
+		</div>
+		<div class="offset5 span3">
+			<button class="btn btn-primary" id="yw4" type="submit" name="yt2">Continuar - Cuotas</button>		</div>
+	</div>
+</div>
+
+</form><script>
+	function updatePayNotCash(pay_id)
+	{
+		jQuery("#Pay_id").val(pay_id);
+		jQuery("#btnRefreshNotCashInfo").click();
+		jQuery("#createPayNotCashInfoDialog").modal("hide");
+	}
+
+	function beforeAddNotCash (jqXHR,settings){
+		if( $("#Pay_person_id").val() == "" ) 
+		{ 
+			alert("Debe seleccionar a una persona"); return false; 
+		} 
+	}
+
+	function alertSavePayForNotCash()
+	{
+		alert("Debe guardar el registro antes de agregar un Pago no en Efectivo"); 
+		return false;	
+	}
+</script>
+
+	</div><!--/span-->
+  </div><!--/row-->
+
+
+    </div>
+</section>
+
+<!-- Require the footer -->
+	<footer>
+        <div class="subnav navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    Desarrollado por <a href="http://www.koiosoft.com" target="_new">Koiosoft, Tecnología de Información C.A.</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>      
+	</footer>
+  <script type="text/javascript" src="/assets/a267ce4b/jquery.formatCurrency-1.4.0.js"></script>
+<script type="text/javascript" src="/assets/a267ce4b/i18n/jquery.formatCurrency.es-VE.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+jQuery('[data-toggle=popover]').popover();
+jQuery('body').tooltip({"selector":"[data-toggle=tooltip]"});
+jQuery('#Pay_person_id').select2({'width':'resolve'});
+jQuery('#Pay_pay_date').datepicker({'format':'dd/mm/yyyy','weekStart':1,'forceParse':true,'autoclose':true,'todayBtn':true,'0':'minViewMode','language':'es'});
+jQuery('body').on('click','#btnRefreshNotCashInfo',function(){jQuery.ajax({'type':'GET','data':{'pay_id':function(){ return $("#Pay_id").val(); }},'url':'/index.php/backend/pay/ajaxNotCashInfo','cache':false,'success':function(html){jQuery("#section-tabnotcashinfo").replaceWith(html)}});return false;});
+jQuery('body').on('click','#btnCreateNotCashInfo',function(){jQuery.ajax({'type':'GET','data':{'person_id':function(){ return $("#Pay_person_id").val(); },'pay_id':function(){ return $("#Pay_id").val(); }},'beforeSend':alertSavePayForNotCash,'url':'/index.php/backend/pay/ajaxCreateNotCashInfo','cache':false,'success':function(html){jQuery("#createNotCashInfo").html(html)}});return false;});
+jQuery('body').on('click','#yw2',function(){jQuery.yii.submitForm(this,'/index.php/backend/pay/admin',{});return false;});
+jQuery('body').on('click','#yw3',function(){jQuery.yii.submitForm(this,'/index.php/backend/pay/payStep1/pay_id//step/1',{});return false;});
+jQuery('body').on('click','#yw4',function(){jQuery.yii.submitForm(this,'/index.php/backend/pay/payStep1/pay_id//step/2',{});return false;});
+});
+/*]]>*/
+</script>
+</body>
+</html>

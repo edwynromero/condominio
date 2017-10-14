@@ -1,0 +1,16 @@
+{
+   "require-dev": {
+       "phpunit/phpunit-selenium": "^2.0",
+       "phpunit/php-invoker": "*",
+       "phpunit/dbunit": ">=1.2",
+       "phpunit/phpunit-story": "*",
+       "codeception/codeception":"*"
+       
+        
+   },	
+    "require": {
+        "baibaratsky/php-mailgun": "*",
+        "mailgun/mailgun-php": "~1.7.1",
+        "codeception/YiiBridge": "*"
+    }
+}

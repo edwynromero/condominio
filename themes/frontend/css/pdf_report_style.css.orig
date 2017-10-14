@@ -1,0 +1,415 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 3, 2015, 11:31:07 PM
+    Author     : koiosoft
+*/
+
+.header_report
+{
+    font-size: 10px;
+}
+
+.header_report table
+{
+    background-color: #FFF;
+
+.header-title
+{
+    background-color: #FFF; 
+    text-align: left;
+}
+
+
+.header-label
+{
+    font-weight: bold;
+}
+
+.header-title-2
+{
+    font-weight: bold;
+}
+
+.report_title
+{
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.header-logo
+{
+    width: 70px;
+}
+
+.header-date
+{
+    font-size: 12px; 
+    text-align: center;
+}
+
+	
+.text-footer
+{
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+.header-label
+{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.footer
+{
+    border-top-color: #444;
+    border-top-width: 0.5px;
+    border-top-style: inset;
+    text-align: center;
+}
+
+.note
+{
+    color:#222;	
+    font-size: 12px;
+    text-align: center;
+}
+
+.note-label
+{
+    font-weight: bold;
+}
+
+.label-report
+{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+td.cell-location-label
+{
+    font-size: 12px;
+    text-align: left;
+}
+
+td.cell-location-code, td.cell-location-status, td.cell-location-build, td.cell-location-owners
+{
+    font-size: 12px;
+    text-align: left;
+}
+
+div.title-unpaid-fees
+{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.header-table
+{
+    border: 3px solid  whitesmoke;
+    width:100%;
+}
+
+td.cell-location-value
+{
+  font-size: 12px;  
+}
+
+.location-row
+{
+
+}
+
+.head-row
+{
+
+}
+
+.deb-current
+{
+    font-size: 12px;
+    color: red;
+}
+
+.deb-current-solvent
+{
+    font-size: 12px;
+    color: green;
+}	
+
+.label-feed-pending
+{
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #EEE;
+}
+
+.table-feed-pending
+{
+    width: 300px;
+}
+
+.separator-feed-pending
+{
+    background-color: #EEE;
+    height: 2px;
+}
+
+table.odd
+{
+    background-color: white;
+}
+
+table.even
+{
+    background-color: whitesmoke;
+}
+
+table.end-table
+{
+    height: 20px;
+    width: 420px;
+}
+
+
+
+td.feed-name
+{
+    width: 220px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+td.feed-value
+{
+    width: 130px;
+    padding-left: 10px;
+}
+
+td.feed-date
+{
+    width: 100px;
+    padding-left: 10px;
+}
+
+.body-table-feed-pending
+{
+        border-bottom-color: #EEE;
+        border-bottom-width: 1px;
+        font-size: 12px;
+}
+
+.advertence
+{
+        color: red;
+        font-size: 2px;
+}
+
+.legend_cuota_pending
+{
+        text-align: center;
+        color: #333;
+        font-size: 12px;
+}
+
+.last-pay
+{
+        color: blue;
+}
+
+.value {
+        font-size: 12px;
+}
+
+.last-pay-unchecked
+{
+        color: orange;
+}
+
+.last-pay-unchecked-legend
+{
+        font-size: 12px;
+        color: orange;
+}
+
+div.solvency-contribution-declaration
+{
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    
+}
+
+span.pay-receipt-label-header
+{
+    font-weight: bold;
+}
+
+td.pay-receipt-column
+{
+    font-size: 12px;
+}
+
+span.pay-receipt-label-validate
+{
+    color:  green;
+}
+
+span.pay-receipt-label-not-validate
+{
+    color: red;
+}
+
+table.pay-receipt-header-table
+{
+    background-color: whitesmoke;
+    border: 3px solid  whitesmoke;
+    width:100%;
+}
+
+table.pay-receipt-summary-table
+{
+    background-color: #E8EEE8;
+    border: 3px solid  #E8EEE8;
+    width:100%;
+}
+
+table.pay-receipt-detail-table
+{
+   width:100%; 
+}
+
+table.pay-total-fee-payed-table
+{
+   width:100%; 
+   background-color: #E8EEE8;
+}
+
+td.chash-value
+{
+    width:170px;
+}
+
+td.not-chash-value
+{
+    width: 385px;
+}
+
+td.col-pay-detail
+{
+    font-size: 11px;
+    width: 15%
+}
+
+td.col-pay-detail-type
+{
+    font-size: 11px;
+    width: 80px;
+}
+
+td.col-pay-detail-date
+{
+    font-size: 11px;
+    width: 80px;
+}
+
+td.col-pay-detail-date-header
+{
+    width: 80px;
+    font-size: 14px;
+    background-color: #E8EEE8;
+}
+
+td.col-pay-detail-type-header
+{
+    width: 80px;
+    font-size: 14px;
+    background-color: #E8EEE8;
+}
+
+td.col-pay-detail-header
+{
+    width: 15%;
+    font-size: 14px;
+    background-color: #E8EEE8;
+}
+
+td.col-pay-fee
+{
+    font-size: 11px;
+    width: 20%   
+}
+
+td.col-pay-detail-account
+{
+    font-size: 11px;
+    width: 15%
+}
+
+div.pay-receipt-header-detail
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+td.col-pay-fee-header
+{
+    width: 20%;
+    font-size: 14px;
+    background-color: #E8EEE8;    
+}
+
+td.col-pay-balance-header 
+{
+    width: 5%;
+    font-size: 12px;    
+}
+
+td.col-pay-balance
+{
+    width: 5%;
+    font-size: 12px;    
+}
+
+td.col-pay-legend
+{
+    font-size: 12px;    
+}
+
+div.pay-receipt-not-cash-empty
+{
+    text-align: center;
+    color: #3b3b1f;
+    background-color: whitesmoke;
+}
+
+td.col-total-fee-payed
+{
+    color: green;
+    text-align: right;
+}
+
+td.align-right
+{
+    text-align: right;
+    padding-right:10px;
+}
+
+td.align-center
+{
+    text-align: center;
+}
+
+table.pay-receipt-legend
+{
+   width:100%; 
+   border: 1px solid #E8EEE8;
+}

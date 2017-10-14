@@ -1,0 +1,14 @@
+class_name: FunctionalTester
+modules:
+    config:
+        Yii1:
+            part: fixtures
+            appPath: index-codeception.php
+            url: http://mirador_remoto.local/index.php
+        PhpBrowser:
+            url: http://mirador_remoto.local/index.php
+    enabled:
+        - \Helper\Functional
+        - Yii1
+        - PhpBrowser
+        

@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+
+
+/**  Classes para backend pago **/
+body.page-backend-pay-admin
+{
+	
+}
+
+body.page-backend-pay-admin .filters
+{
+	display:none;
+}
+
+.subnav.navbar-fixed-top
+{
+    top: 40px;
+}
+
+a.brand img 
+{
+    margin-right:10px;
+}
+
+div.nav-collapse 
+{
+    margin-top: 14px;
+}
+
+
+footer .navbar-inner{
+    min-height: 20px !important;
+}
+
+
+@media (min-width:1200px) 
+{
+	#navigation-main div.container
+	{
+		width: 1170px !important;
+		width: 100% !important;
+		padding-left: 90px !important;
+	}	
+	#navigation-main div.nav-collapse
+	{
+		margin-right: 90px !important;
+	}
+}
+
+	
+@media (min-width:980px) and (max-width:1199px) 
+{
+	#navigation-main div.nav-collapse
+	{
+		margin-right: -90px !important;
+	}
+	
+	#navigation-main div.container
+	{
+		padding-left: 0px !important;
+	}	
+}
+
+a.myaccount-link
+{
+	color: rgb(204, 237, 143) !important;
+}
+
+
+body.page-backend-payNotCashInfo-review .grid-view .filters .filter-container {
+	padding: 0 0 0 0 !important;
+}
+
+
+div#select-person div.select2-container, div#select-person div.select2-container{
+    width:100%;
+}
+
+div#process_location_form_resume{
+    margin-top:     0px;
+    text-align: center;
+}
+
+div#process_location_form_resume span{
+    color: #356635;
+}
+
+img.bank_logo {
+    width: 80px;
+    
+}
+
+div.account_view{
+    height:  180px;
+}
+
+
+div.account_view .logo-container{
+    height: 110px;
+}
+
+
+div #accounting_move_detail{
+    font-size: 14   px;
+}
+
+
