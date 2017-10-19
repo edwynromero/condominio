@@ -1,9 +1,22 @@
 <?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of BootstrapCommand
+ *
+ * @author Koiosoft <Team at www.koiosoft.com>
+ */
 class BootstrapCommand  extends KCommand {
     //put your code here
     
     const STATUS_FAIL = 0;
     const STATUS_SUCESS = 1;
+   
     public $defaultAction   = "Mirador";
 
     /**
@@ -87,7 +100,7 @@ class BootstrapCommand  extends KCommand {
         throw new Exception("Falla guardando los libros diarios $title detalle" . CVarDumper::dumpAsString($accountingJournal->getErrors() ) );
             
          }
-        return $accountingJournal;        
+        return $accountingJournal;          
     }
     
     private function fillJournal()
@@ -156,38 +169,103 @@ class BootstrapCommand  extends KCommand {
    
     
    
-    private function createUploadTmp($cod_libros, $concepto, $fecha){    
-       
-        /*$tmpAccounting = TmpUploadDataAccounting::model()->find("`cod_libros` = :cod_libros OR `concepto` = :concepto OR `fecha` = :fecha", array(":cod_libros"=>$cod_libros, ":concepto"=>$concepto, ":fecha"=>$fecha));
-       
-        if( is_null( $tmpAccounting ) ){
-            
-            $tmpAccounting = new AccountingMove();
-            $tmpAccounting->cod_libros = $cod_libros;
-            $tmpAccounting->concepto = $concepto;
-            $tmpAccounting->fecha = $fecha;
-         
-    
-            
-        }*/
+    private function createUploadTmp(){ 
+        
         $tmpAccounting = TmpUploadDataAccounting::model()->findAll();
-        if (is_null($tmpAccounting)){
+        
+        
+        if (!is_null($tmpAccounting)){
             
             foreach ($tmpAccounting as $key=>$object){
-                
+             
                 $accountingMove = new AccountingMove();
-                $accountingMove->cod_libros = $object->cod_libros;
-                $accountingMove->concepto = $object->concepto;
-                $accountingMove->fecha = $object->fecha;
+                //new TmpConcepts();
+                $accountingMove->journal_id = $object->cod_journal;
+                $concept                    =  TmpConcepts::model()->find("id_concept=:id_concept",array(':id_concept'=>trim($object->id_concept)));
+                $accountingMove->label = $concept->concepto;
+                $accountingMove->date_at= MipHelper::parseDateToDb($object->fecha);
+                $accountingMove->status = 'EM99';
+                $accountingMove->created_at = MipHelper::getCurrentTimeStampDateDb();
+                $accountingMove->credt = $object->credt;
+                $accountingMove->debt = $object->debt;
+                
+                
                 
                 if (!$accountingMove->save()){
-                    echo $accountingMove->cod_libros;
+                    print_r($accountingMove->getErrors());
+                }else{
+                    print "paso";
                 }
             }
             
+            
+        }else{
+            print "esta null el origen";
         }
    
       }
+      
+      
+      
+       private function createUploadMoveLine(){
+           
+           $accountingMoveTemp = TmpUploadDataAccounting::model()->findAll();
+        if (!is_null($accountingMoveTemp)){
+            
+            foreach ($accountingMoveTemp as $key=>$object){
+               
+                
+                $accountingMoveLine                         = new AccountingMoveLine();
+                $accountingMove                             = AccountingMove::model()->find("id=:id",array(':id'=>trim($object->id_concept)));
+                
+                $accountingMoveLine->accounting_move_id     = $accountingMove->id;               
+                $acounting                                  = AccountingAccount::model()->find("code=:code",array(':code'=>trim($object->account)));
+                $accountingMoveLine->accounting_account_id  = $acounting->id; 
+                $accountingMoveLine->amount                 = trim($object->credt);                          
+                $accountingMoveLine->debt                   = trim($object->debt);
+                $accountingMoveLine->credt                  = trim($object->credt);
+                
+                if ($accountingMoveLine->credt > 0 && $accountingMoveLine->debt == 0)
+                {
+               
+                    $accountingMoveLine->isCredit = true;
+                  
+                    
+                }else if ($accountingMoveLine->credt == 0 && $accountingMoveLine->debt > 0)
+                {
+                    $accountingMoveLine->isCredit = false;
+                   
+                    
+                }
+               
+                                                                                       
+                $accountingMoveLine->accounting_period_id     = trim($object->mes);
+                $accountingMoveLine->reconciled               = 1;
+                $accountingMoveLine->date_at                  = trim(MipHelper::parseDateToDb(trim($object->fecha)));
+               
+                $accountingMoveLine->created_at               = MipHelper::getCurrentTimeStampDateDb();                
+                 
+                
+                
+                
+                
+                if (!$accountingMoveLine->save()){
+                    print_r($accountingMoveLine->getErrors());
+                    
+                    
+                }else{
+                    
+                    print $object->id." -";
+                    
+                }
+            }
+                }else{
+            print "esta null el origen";
+        }
+    
+      }
+      
+      
       
     
     
@@ -216,9 +294,10 @@ class BootstrapCommand  extends KCommand {
             
                 
                 $this->fillYearsFrom2014To2017();
-                //$this->executeScript("/mirador/scripts/plan_de_cuentas.sql");
-                //$this->fillJournal();
-                //$this->createUploadTmp();
+                $this->executeScript("/mirador/scripts/plan_de_cuentas.sql");
+                $this->fillJournal();
+                $this->createUploadTmp();
+                $this->createUploadMoveLine();
                 $transaction->commit();
             
             } catch (Exception $ex) {

@@ -1,0 +1,86 @@
+2017/10/14 10:41:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-01' for key 'accounting_period_label_UNIQUE'. The SQL statement executed was: INSERT INTO `mip_accounting_period` (`label`, `from`, `to`, `status`, `fiscal_year_id`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6). Bound with :yp0='2014-01', :yp1='2014-01-01', :yp2='2014-01-31', :yp3='ST98', :yp4=1, :yp5='2017-10-14 10:41:57', :yp6='2017-10-14 10:41:57'.
+2017/10/14 10:43:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_journal`, CONSTRAINT `fk_mip_accounting_journal_accounting_account_debt1` FOREIGN KEY (`debt_account_id`) REFERENCES `mip_accounting_account` (`id`) ON DELETE ). The SQL statement executed was: INSERT INTO `mip_accounting_journal` (`deprecated`, `code`, `title`, `note`, `credt_account_id`, `debt_account_id`, `journal_type`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8). Bound with :yp0=0, :yp1='IC202', :yp2='Diario Ingresos por Condominio', :yp3='Factura de Condominio', :yp4=163, :yp5=219, :yp6='J011', :yp7='2017-10-14 10:43:33', :yp8='2017-10-14 10:43:33'.
+2017/10/14 10:59:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_journal`, CONSTRAINT `fk_mip_accounting_journal_accounting_account_debt1` FOREIGN KEY (`debt_account_id`) REFERENCES `mip_accounting_account` (`id`) ON DELETE ). The SQL statement executed was: INSERT INTO `mip_accounting_journal` (`deprecated`, `code`, `title`, `note`, `credt_account_id`, `debt_account_id`, `journal_type`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8). Bound with :yp0=0, :yp1='IC202', :yp2='Diario Ingresos por Condominio', :yp3='Factura de Condominio', :yp4=163, :yp5=219, :yp6='J011', :yp7='2017-10-14 10:59:59', :yp8='2017-10-14 10:59:59'.
+2017/10/14 11:01:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_journal`, CONSTRAINT `fk_mip_accounting_journal_accounting_account_debt1` FOREIGN KEY (`debt_account_id`) REFERENCES `mip_accounting_account` (`id`) ON DELETE ). The SQL statement executed was: INSERT INTO `mip_accounting_journal` (`deprecated`, `code`, `title`, `note`, `credt_account_id`, `debt_account_id`, `journal_type`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8). Bound with :yp0=0, :yp1='IC202', :yp2='Diario Ingresos por Condominio', :yp3='Factura de Condominio', :yp4=163, :yp5=219, :yp6='J011', :yp7='2017-10-14 11:01:25', :yp8='2017-10-14 11:01:25'.
+2017/10/14 11:03:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_journal`, CONSTRAINT `fk_mip_accounting_journal_accounting_account_debt1` FOREIGN KEY (`debt_account_id`) REFERENCES `mip_accounting_account` (`id`) ON DELETE ). The SQL statement executed was: INSERT INTO `mip_accounting_journal` (`deprecated`, `code`, `title`, `note`, `credt_account_id`, `debt_account_id`, `journal_type`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8). Bound with :yp0=0, :yp1='IC202', :yp2='Diario Ingresos por Condominio', :yp3='Factura de Condominio', :yp4=163, :yp5=219, :yp6='J011', :yp7='2017-10-14 11:03:58', :yp8='2017-10-14 11:03:58'.
+2017/10/14 11:04:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'debt' in 'field list'. The SQL statement executed was: INSERT INTO `mip_accounting_account` (`id`, `parent_account_id`, `type`, `code`, `label`, `debt`, `credt`, `balance`, `created_at`, `updated_at`, `access_key`) VALUES
+(216, 12, '1111', 12132, 'CUENTAS POR COBRAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001278'),
+(217, 12, '1111', 2104006, 'BONO DE ALIMENTACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001283'),
+(218, 12, '1111', 2104008, 'LIQUIDACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001204'),
+(219, 12, '1111', 2102003, 'CUENTAS POR PAGAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001205');
+
+.
+2017/10/14 11:09:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'debt' in 'field list'. The SQL statement executed was: INSERT INTO `mip_accounting_account` (`id`, `parent_account_id`, `type`, `code`, `label`, `debt`, `credt`, `balance`, `created_at`, `updated_at`, `access_key`) VALUES
+(216, 12, '1111', 12132, 'CUENTAS POR COBRAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001278'),
+(217, 12, '1111', 2104006, 'BONO DE ALIMENTACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001283'),
+(218, 12, '1111', 2104008, 'LIQUIDACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001204'),
+(219, 12, '1111', 2102003, 'CUENTAS POR PAGAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001205');
+
+.
+2017/10/14 11:20:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_journal`, CONSTRAINT `fk_mip_accounting_journal_accounting_account_debt1` FOREIGN KEY (`debt_account_id`) REFERENCES `mip_accounting_account` (`id`) ON DELETE ). The SQL statement executed was: INSERT INTO `mip_accounting_journal` (`deprecated`, `code`, `title`, `note`, `credt_account_id`, `debt_account_id`, `journal_type`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8). Bound with :yp0=0, :yp1='IC202', :yp2='Diario Ingresos por Condominio', :yp3='Factura de Condominio', :yp4=163, :yp5=219, :yp6='J011', :yp7='2017-10-14 11:20:44', :yp8='2017-10-14 11:20:44'.
+2017/10/14 11:28:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'debt' in 'field list'. The SQL statement executed was: INSERT INTO `mip_accounting_account` (`id`, `parent_account_id`, `type`, `code`, `label`, `debt`, `credt`, `balance`, `created_at`, `updated_at`, `access_key`) VALUES
+(216, 12, '1111', 12132, 'CUENTAS POR COBRAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001202'),
+(217, 12, '1111', 2104006, 'BONO DE ALIMENTACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001203'),
+(218, 12, '1111', 2104008, 'LIQUIDACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001204'),
+(219, 12, '1111', 2102003, 'CUENTAS POR PAGAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:40', NULL, '001205');
+
+.
+2017/10/14 11:31:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'debt' in 'field list'. The SQL statement executed was: INSERT INTO `mip_accounting_account` (`id`, `parent_account_id`, `type`, `code`, `label`, `debt`, `credt`, `balance`, `created_at`, `updated_at`, `access_key`) VALUES
+(216, 12, '1111', 12132, 'CUENTAS POR COBRAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:33', NULL, '001202'),
+(217, 12, '1111', 2104006, 'BONO DE ALIMENTACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:41', NULL, '001203'),
+(218, 12, '1111', 2104008, 'LIQUIDACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:43', NULL, '001204'),
+(219, 12, '1111', 2102003, 'CUENTAS POR PAGAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:46', NULL, '001205');
+
+.
+2017/10/14 11:33:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'debt' in 'field list'. The SQL statement executed was: INSERT INTO `mip_accounting_account` (`id`, `parent_account_id`, `type`, `code`, `label`, `debt`, `credt`, `balance`, `created_at`, `updated_at`, `access_key`) VALUES
+(216, 12, '1111', 12132, 'CUENTAS POR COBRAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:33', NULL, '001202'),
+(217, 12, '1111', 2104006, 'BONO DE ALIMENTACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:41', NULL, '001203'),
+(218, 12, '1111', 2104008, 'LIQUIDACION', '0.00', '0.00', '0.00', '2017-07-04 20:24:43', NULL, '001204'),
+(219, 12, '1111', 2102003, 'CUENTAS POR PAGAR PROPIETARIOS', '0.00', '0.00', '0.00', '2017-07-04 20:24:46', NULL, '001205');
+
+.
+2017/10/14 11:36:24 [error] [php] include(TmpUploadDataAccounting.php): failed to open stream: No such file or directory (C:\xampp\htdocs\web\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\web\protected\commands\BootstrapCommand.php(174): spl_autoload_call()
+#1 C:\xampp\htdocs\web\protected\commands\BootstrapCommand.php(297): BootstrapCommand->createUploadTmp()
+#2 unknown(0): BootstrapCommand->actionMirador()
+#3 C:\xampp\htdocs\web\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\web\framework\console\CConsoleCommandRunner.php(71): BootstrapCommand->run()
+#5 C:\xampp\htdocs\web\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#6 C:\xampp\htdocs\web\framework\base\CApplication.php(180): CConsoleApplication->processRequest()
+#7 C:\xampp\htdocs\web\framework\yiic.php(33): CConsoleApplication->run()
+#8 C:\xampp\htdocs\web\protected\yiic.php(34): require_once()
+
+2017/10/14 12:02:18 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'concept' in 'where clause'. The SQL statement executed was: SELECT * FROM `tmp_concepts` `t` WHERE concept=:concept LIMIT 1. Bound with :concept='1'.
+2017/10/14 12:15:00 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\web\protected\commands\BootstrapCommand.php:185)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 C:\xampp\htdocs\web\framework\console\CConsoleCommandRunner.php(71): BootstrapCommand->run()
+#2 C:\xampp\htdocs\web\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(180): CConsoleApplication->processRequest()
+#4 C:\xampp\htdocs\web\framework\yiic.php(33): CConsoleApplication->run()
+#5 C:\xampp\htdocs\web\protected\yiic.php(34): require_once()
+
+2017/10/14 12:15:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\web\protected\commands\BootstrapCommand.php:185)
+Stack trace:
+#0 C:\xampp\htdocs\web\framework\console\CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 C:\xampp\htdocs\web\framework\console\CConsoleCommandRunner.php(71): BootstrapCommand->run()
+#2 C:\xampp\htdocs\web\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 C:\xampp\htdocs\web\framework\base\CApplication.php(180): CConsoleApplication->processRequest()
+#4 C:\xampp\htdocs\web\framework\yiic.php(33): CConsoleApplication->run()
+#5 C:\xampp\htdocs\web\protected\yiic.php(34): require_once()
+
+2017/10/14 12:17:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_move`, CONSTRAINT `fk_accounting_move_accounting_journal1` FOREIGN KEY (`journal_id`) REFERENCES `mip_accounting_journal` (`id`) ON DELETE NO ACTION ON UPDATE ). The SQL statement executed was: INSERT INTO `mip_accounting_move` (`credt`, `journal_id`, `label`, `date_at`, `status`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6). Bound with :yp0='5000.00', :yp1=1, :yp2='Deposito/Rosario Troitiño/Txomin mendiola/Fran Piñero', :yp3='2014-02-04', :yp4='EM99', :yp5='2017-10-14 12:17:00', :yp6=NULL.
+2017/10/14 13:08:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/10/14 13:12:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/10/14 14:32:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tmp_upload_data_accounting' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tmp_upload_data_accounting`.
+2017/10/14 14:33:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tmp_upload_data_accounting' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tmp_upload_data_accounting`.
+2017/10/14 14:51:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tmp_concepts' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tmp_concepts`.
+2017/10/14 16:32:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/10/17 12:52:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/10/17 12:56:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tmp_upload_data_accounting' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tmp_upload_data_accounting`.
+2017/10/17 12:58:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tmp_upload_data_accounting' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tmp_upload_data_accounting`.
+2017/10/17 13:04:09 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mirador_remoto`.`mip_accounting_move`, CONSTRAINT `fk_accounting_move_accounting_journal1` FOREIGN KEY (`journal_id`) REFERENCES `mip_accounting_journal` (`id`) ON DELETE NO ACTION ON UPDATE ). The SQL statement executed was: INSERT INTO `mip_accounting_move` (`debt`, `credt`, `journal_id`, `label`, `date_at`, `status`, `created_at`, `updated_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7). Bound with :yp0='0.00', :yp1='5000.00', :yp2=1, :yp3='Deposito/Rosario Troitiño/Txomin mendiola/Fran Piñero', :yp4='2014-02-04', :yp5='EM99', :yp6='2017-10-17 13:04:09', :yp7=NULL.
+2017/10/17 13:10:28 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/10/17 16:18:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2017/10/17 17:42:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mirador_remoto.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.

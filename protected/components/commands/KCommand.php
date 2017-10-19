@@ -15,6 +15,7 @@ class KCommand  extends CConsoleCommand {
     //put your code here
     
     private $path_migrations = null;
+    private $_command = null;
     
     
     /**
@@ -27,7 +28,6 @@ class KCommand  extends CConsoleCommand {
         
         if(is_null($this->path_migrations)){
             $this->path_migrations = Yii::getPathOfAlias('application').DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR.$this->getName().DIRECTORY_SEPARATOR;
-            $this->writeLine( CVarDumper::dumpAsString( $this->getCommandRunner() ) );
         }
         return $this->path_migrations;
     }
@@ -46,17 +46,40 @@ class KCommand  extends CConsoleCommand {
         }
         
         try {
-            echo " \n Antes del SCRIPT \n";
+            $this->writeLine( "Antes del SCRIPT:  " . $scriptPath);
             $this->execute(file_get_contents( $this->getScriptPath() . $scriptPath));
-            echo " \n Despues del SCRIPT \n";
+            $this->writeLine( "Despues del SCRIPT");
         } catch (Exception $ex) {
-            echo  "\n" . $ex->getMessage() ."\n";
             throw  $ex;
         }
         
     }
     
     
+    /**
+     * 
+     * @return CDbCommand
+     */
+    protected  function getCommand(){
+        if(is_null($this->_command)){
+            $this->_command = $this->getDbConnection()->createCommand();
+        }
+        return $this->_command;
+    }
+    
+    /**
+     * 
+     * @param type $params
+     */
+    protected function execute($sql, $params=array()){
+        
+        $command = $this->getCommand();
+        $command->text = $sql;
+        $command->execute( $params);
+
+    }
+
+
     /**
      * Realiza un Backup de la Base de Datos
      * 
